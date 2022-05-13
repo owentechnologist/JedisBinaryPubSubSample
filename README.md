@@ -1,11 +1,9 @@
 # JedisBinaryPubSub example
-## The connection information is set using the 
+## The connection information is set using the  jedisconnectionfactory.properties file
 
-### jedisconnectionfactory.properties file
+(so edit that file to match your environment)
 
-##(so edit that file to match your environment)
-
-This program is demonstrates what happens when you utilize redis pubsub functionality using bytes for the payload. 
+This program demonstrates what happens when you utilize redis pubsub functionality using bytes for the payload. 
 The default behavior (no args passed in) is for the program to 
 1) start up 3 subscribers to a channel
 2) wait a bit for them to register
