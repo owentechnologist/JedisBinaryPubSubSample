@@ -102,7 +102,6 @@ class PubSubListener implements Runnable{
     BinaryJedisPubSub pubsub = null; // will be set during listenForMessages method
     int messageCounter = 0;
     String instanceID = "me";
-    boolean shouldStop = false;
 
     public PubSubListener(String id){
         this.instanceID = id;
@@ -114,7 +113,6 @@ class PubSubListener implements Runnable{
             System.out.println("\n\t"+messageCounter + " Messages received by "+instanceID+"__"+System.identityHashCode(this));
             //reset messageCounter as the expected test load is complete:
             messageCounter = 0;
-            shouldStop = true;
             pubsub.unsubscribe();
         }
     }
@@ -122,12 +120,6 @@ class PubSubListener implements Runnable{
     @Override
     public void run() {
         listenForMessages(this);
-        while(!shouldStop){
-            //empty loop
-            try {
-                Thread.sleep(10);
-            }catch(Throwable t){} // don't care
-        }
     }
 
     void listenForMessages(PubSubListener parent){

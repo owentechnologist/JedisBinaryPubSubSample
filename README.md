@@ -8,7 +8,7 @@ The default behavior (no args passed in) is for the program to
 1) start up 3 subscribers to a channel
 2) wait a bit for them to register
 3) publish 100 messages to that channel
-4) when all subscribers have received all expected messages (100 by default) the program exits
+4) EXIT when all subscribers have received all expected messages (100 by default) 
 
 #### To run this application in default mode you execute:
 ```
